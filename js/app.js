@@ -22,6 +22,12 @@
             }));
         }
     }), 0);
+    const showDate = document.getElementById("showDate");
+    const firstMessage = document.getElementById("firstMessage");
+    setTimeout((() => {
+        firstMessage.style.display = "flex";
+        showDate.style.display = "block";
+    }), 3e3);
     const printDate = document.getElementById("todayDate");
     const spendTime = document.getElementById("spendTime");
     function printDay(todayHours) {
@@ -34,30 +40,22 @@
     let todayMinuts = (todayDate.getMinutes() < 10 ? "0" : "") + todayDate.getMinutes();
     let todayHours = todayDate.getHours();
     let todayDateNow = todayHours + ":" + todayMinuts + " " + printDay(todayHours);
-    console.log(todayHours);
     printDate.innerHTML = todayDateNow;
     spendTime.innerHTML = spendMyTime(todayHours);
     const chatWrapper = document.querySelector(".chat__wrapper");
-    let inputMessage = document.querySelector(".input-message");
     const sendMessage = document.querySelector(".send-message");
+    let inputMessage = document.querySelector(".input-message");
     sendMessage.addEventListener("click", (function(e) {
-        chatWrapper.insertAdjacentHTML("beforeend", '<div class="chat-user chat-body"><div class="chat-user__image"><img src="img/person2.png" alt=""></div><div  class="chat-user__message chat-message"><p class="chat-user__text">' + inputMessage.value + '</p><div class="chat-user__time chat-time" id="timeAgo">8 minutes ago</div></div></div>');
+        if (0 == inputMessage.value) e.preventDefault();
+        chatWrapper.insertAdjacentHTML("beforeend", '<div class="chat-user chat-body"><div class="chat-user__image"><img src="img/person2.png" alt=""></div><div class="chat-user__message chat-message"><p class="chat-user__text">' + inputMessage.value + '</p><div class="chat-user__time chat-time logtime like-counter"></div></div></div>');
+        timeMark();
         presetLoading();
         setTimeout((() => {
-            if ("собираюсь на прогулку" == inputMessage.value.toLowerCase()) {
-                chatWrapper.insertAdjacentElement("beforeend", botMessage);
-                outputMessage.innerHTML = "Погода отличная, хорошей прогулки";
-            }
-            if ("привет" == inputMessage.value.toLowerCase()) {
-                chatWrapper.insertAdjacentElement("beforeend", botMessage);
-                outputMessage.innerHTML = "привет";
-            }
+            let message;
+            if ("привет, смотрю сериал" == inputMessage.value.toLowerCase()) message = `Здорово, я вот жду 3 сезон сериала "видеть"`; else if ("как твои дела?" == inputMessage.value.toLowerCase()) message = "Недавно ходили на море, тебе нравится море?"; else if ("нравится море, люблю плавать" == inputMessage.value.toLowerCase()) message = "Вода щас очень теплая, людей правда много"; else if ("не фанат ходить на море" == inputMessage.value.toLowerCase()) message = "А мне нравится"; else if ("что у тебя нового?" == inputMessage.value.toLowerCase()) message = "Неделю назад приобрел машину"; else if ("что за машина?" == inputMessage.value.toLowerCase()) message = "Toyota Soarer, люблю быстро ездить"; else if ("главное ездить с умом" == inputMessage.value.toLowerCase()) message = "Обязательно"; else if ("" == inputMessage.value) message = "Не вижу что написано"; else message = "Прости, появились срочные дела. До встречи!";
+            chatWrapper.insertAdjacentHTML("beforeend", '<div class="chat-bot chat-body"><div class="chat-bot__image"><img src="img/person1.png" alt=""></div><div class="chat-bot__message chat-message"><p class="chat-bot__text">' + message + '</p><div class="chat-bot__time chat-time logtime"></div></div></div>');
         }), 1500);
     }));
-    let botMessage = document.createElement("div");
-    botMessage.className = "chat-bot chat-body";
-    botMessage.innerHTML = '<div class="chat-bot__image"><img src="img/person1.png" alt=""></div><div class="chat-bot__message chat-message"><p class="chat-bot__text"></p><div class="chat-bot__time chat-time" id="timeAgo">8 minutes ago</div></div>';
-    let outputMessage = botMessage.querySelector(".chat-bot__text");
     let loadingChat = document.createElement("div");
     loadingChat.className = "chat-bot chat-body chat-loading";
     loadingChat.innerHTML = '<div class="chat-bot__image"><img src="img/person1.png" alt=""></div><div class="chat-bot__loading chat-message"><span class="loading loading-1"></span><span class="loading loading-2"></span><span class="loading loading-3"></span></div>';
@@ -67,6 +65,15 @@
             loadingChat.remove();
         }), 1500);
     }
+    function timeMark() {
+        let logMessage = document.querySelector(".logtime");
+        let sendDate = new Date;
+        let sendMinuts = (sendDate.getMinutes() < 10 ? "0" : "") + sendDate.getMinutes();
+        let sendHours = sendDate.getHours();
+        let sendMessageDate = sendHours + ":" + sendMinuts;
+        logMessage.innerHTML = sendMessageDate;
+    }
+    timeMark();
     window["FLS"] = false;
     isWebp();
 })();
