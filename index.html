@@ -5,7 +5,7 @@
 	<title>Hello Wyse</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="css/style.min.css?_v=20220813205249">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220820205006">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -14,7 +14,13 @@
 	<div class="wrapper">
 		<main class="page">
 			<div class="chat">
-				<h1 class="chat__title">First IPhone Design</h1>
+				<div class="chat-header">
+					<!-- <div class="change-mode">
+						<input type="checkbox" id="switcher">
+						<label for="switcher">Switch</label>
+					</div> -->
+					<h1 class="chat__title">First IPhone Design</h1>
+				</div>
 				<div id="showDate" class="chat__date">сегодня в <span id="todayDate"></span></div>
 				<div class="chat__wrapper">
 					<div id="firstMessage" class="chat-bot chat-body">
@@ -25,21 +31,26 @@
 						</div>
 					</div>
 				</div>
-				<form class="chat__input">
-					<input id="input-message" class="input-message" autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Введите сообщение">
-					<button type="button" class="send-message go-like">Send</button>
+				<form action="" class="chat__input">
+					<input class="input-message" autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Введите сообщение" required>
+					<button type="button" class="send-message"><img class="send-icon" src="img/send.svg" alt=""></button>
 				</form>
 			</div>
 		</main>
 	</div>
-	<script src="js/app.min.js?_v=20220813205249"></script>
+	<script src="js/app.min.js?_v=20220820205006"></script>
 </body>
 
 </html>
 
-<!-- Функционал времени (утро, день, вечер, ночь) -->
-<!-- запрет клика по пустому сообщению
-временные логи
+<!-- Функционал времени (утро, день, вечер, ночь) did-->
+<!-- временные логи did -->
+<!-- запрет клика по пустому сообщению did -->
+<!-- изменить плейсхолдер did-->
+<!-- изменить иконку send did-->
+
+
+<!--
 разные фоны
 фуллсайз чат -->
 <!-- при отправлении сообщения удалять запрос -->

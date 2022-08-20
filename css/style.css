@@ -134,9 +134,9 @@ h6 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: lex-start;
-      -ms-flex-pack: lex-start;
-          justify-content: lex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -153,6 +153,18 @@ h6 {
   height: 812px;
   background: #f5f5f5;
   border-radius: 12px;
+}
+
+.chat-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .chat__wrapper {
@@ -342,7 +354,6 @@ a:focus-visible,
   -webkit-transition: 0s;
   -o-transition: 0s;
   transition: 0s;
-  outline: 3px solid #036fc6;
   outline-offset: 2px;
 }
 
@@ -356,6 +367,52 @@ a:focus-visible,
   width: 333px;
   color: white;
   padding: 18px 45px;
+  outline: none;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #fff;
+  opacity: 1;
+  /* Firefox */
+}
+
+::-moz-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #fff;
+  opacity: 1;
+  /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #fff;
+  opacity: 1;
+  /* Firefox */
+}
+
+::-ms-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #fff;
+  opacity: 1;
+  /* Firefox */
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #fff;
+  opacity: 1;
+  /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #fff;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #fff;
 }
 
 .send-message {
@@ -364,4 +421,11 @@ a:focus-visible,
   color: #fff;
   right: 20px;
   z-index: 222;
+}
+
+.send-icon {
+  font-size: 0.625rem;
+  display: block;
+  width: 25px;
+  height: 25px;
 }
