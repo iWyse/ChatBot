@@ -2,43 +2,46 @@
 <html lang="en">
 
 <head>
-	<title>Chat Bot</title>
-	<meta charset="UTF-8">
-	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="css/style.min.css?_v=20220821135710">
-	<link rel="shortcut icon" href="favicon.ico">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Bot</title>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/style.min.css?_v=20220821135710">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-	<div class="wrapper">
-		<main class="page">
-			<div class="chat">
-				<div class="chat-header">
-					<div class="theme-switcher">
-						<input type="checkbox" class="switcher" id="switcher">
-						<label for="switcher">Switch</label>
-					</div>
-					<h1 class="chat__title">First IPhone Design</h1>
-				</div>
-				<div id="showDate" class="chat__date">сегодня в <span id="todayDate"></span></div>
-				<div class="chat__wrapper">
-					<div id="firstMessage" class="chat-bot chat-body">
-						<div class="chat-bot__image"><picture><source srcset="img/person1.webp" type="image/webp"><img src="img/person1.png" alt="person image"></picture></div>
-						<div class="chat-bot__message chat-message">
-							<p class="chat-bot__text chat-text">Привет, друг! Как <span id="spendTime"></span> проводишь?</p>
-							<div class="chat-bot__time chat-time logtime"></div>
-						</div>
-					</div>
-				</div>
-				<form class="chat__input">
-					<input class="input-message" autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Введите сообщение">
-					<button type="button" class="send-message"><img class="send-icon" src="img/send.svg" alt="icon send message"></button>
-				</form>
-			</div>
-		</main>
-	</div>
-	<script src="js/app.min.js?_v=20220821135710"></script>
+    <div class="wrapper">
+        <main class="page">
+            <div class="chat">
+                <div class="chat-header">
+                    <div class="theme-switcher">
+                        <input type="checkbox" class="switcher" id="switcher">
+                        <label for="switcher">Switch</label>
+                    </div>
+                    <h1 class="chat__title">First IPhone Design</h1>
+                </div>
+                <div id="showDate" class="chat__date">сегодня в <span id="todayDate"></span></div>
+                <div class="chat__wrapper">
+                    <div id="firstMessage" class="chat-bot chat-body">
+                        <div class="chat-bot__image">
+                            <picture>
+                                <source srcset="img/person1.webp" type="image/webp"><img src="img/person1.png" alt="person image"></picture>
+                        </div>
+                        <div class="chat-bot__message chat-message">
+                            <p class="chat-bot__text chat-text">Привет, друг! Как <span id="spendTime"></span> проводишь?</p>
+                            <div class="chat-bot__time chat-time logtime"></div>
+                        </div>
+                    </div>
+                </div>
+                <form class="chat__input">
+                    <input class="input-message" autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Введите сообщение">
+                    <button type="submit" class="send-message"><img class="send-icon" src="img/send.svg" alt="icon send message"></button>
+                </form>
+            </div>
+        </main>
+    </div>
+    <script src="js/app.min.js?_v=20220821135710"></script>
 </body>
 
 </html>
