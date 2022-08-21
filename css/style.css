@@ -236,7 +236,7 @@ h6 {
   padding-left: 30px;
   padding-bottom: 30px;
   height: calc(100% - 200px);
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .chat__title {
@@ -386,47 +386,35 @@ a:focus-visible,
 }
 
 ::-webkit-input-placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #fff;
   opacity: 1;
-  /* Firefox */
 }
 
 ::-moz-placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #fff;
   opacity: 1;
-  /* Firefox */
 }
 
 :-ms-input-placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #fff;
   opacity: 1;
-  /* Firefox */
 }
 
 ::-ms-input-placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #fff;
   opacity: 1;
-  /* Firefox */
 }
 
 ::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #fff;
   opacity: 1;
-  /* Firefox */
 }
 
 :-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
   color: #fff;
 }
 
 ::-ms-input-placeholder {
-  /* Microsoft Edge */
   color: #fff;
 }
 
